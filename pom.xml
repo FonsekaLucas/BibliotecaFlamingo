@@ -5,7 +5,7 @@
 
 	<groupId>br.com.flamingo.biblioteca</groupId>
 	<artifactId>BibliotecaFlamingo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>BibliotecaFlamingo</name>
@@ -55,8 +55,7 @@
 		<dependency>
     		<groupId>net.sourceforge.nekohtml</groupId>
     		<artifactId>nekohtml</artifactId>
-    		<version>1.9.22</version>
-		</dependency>
+    		</dependency>
 
 		<dependency>
 			<groupId>org.hibernate</groupId>
