@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Registration Form</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/registration.css}" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+    <form th:action="@{/index}" method="get">
+        <button class="btn btn-md btn-warning btn-block" type="Submit">Go To Login Page</button>
+    </form>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <form autocomplete="off" action="#" th:action="@{/registercliente}" th:object="${cliente}" method="post" class="form-horizontal" role="form">
+                    <h2>Cadastro do Cliente</h2>
+                    <br />
+                    <div class="form-group">
+                        <div class="col-sm-9">
+                            <input type="text" id="cpfCliente" data-mask="000.000.000-00" data-mask-selectonfocus="true" th:field="*{cpfCliente}" placeholder="CPF" class="form-control" maxlength="11"> <label th:if="${#fields.hasErrors('cpfCliente')}" th:errors="*{cpfCliente}" class="validation-message"></label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-9">
+                            <input type="text" th:field="*{cursoCliente}" placeholder="Curso" class="form-control" /> <label th:if="${#fields.hasErrors('cursoCliente')}" th:errors="*{cursoCliente}" class="validation-message"></label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-9">
+                            <input type="text" th:field="*{emailCliente}" placeholder="Email" class="form-control" /> <label th:if="${#fields.hasErrors('emailCliente')}" th:errors="*{emailCliente}" class="validation-message"></label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-9">
+                            <input type="text" th:field="*{nomeCliente}" placeholder="Nome" class="form-control" /> <label th:if="${#fields.hasErrors('nomeCliente')}" th:errors="*{nomeCliente}" class="validation-message"></label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-9">
+                            <input type="text" th:field="*{telefoneCliente}" placeholder="Telefone" class="form-control" /> <label th:if="${#fields.hasErrors('telefoneCliente')}" th:errors="*{telefoneCliente}" class="validation-message"></label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-9">
+                            <select th:field="*{tipoCliente}">
+                                <option th:each="tipoCliente : ${T(br.com.flamingo.biblioteca.domain.enumeration.TipoCliente).values()}" th:value="${tipoCliente.tipoCliente}" th:text="${tipoCliente.tipoCliente}" class="form-control">
+                            </select> <label th:if="${#fields.hasErrors('tipoCliente')}" th:errors="*{tipoCliente}" class="validation-message"></label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-9">
+                            <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+                        </div>
+                    </div>
+
+                    <span th:utext="${successMessage}"></span>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

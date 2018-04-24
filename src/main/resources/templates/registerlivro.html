@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Cadastro Livro</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<form th:action="@{/index}" method="get">
+		<button class="btn btn-md btn-warning btn-block" type="Submit">Go To Login Page</button>
+	</form>	
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<form autocomplete="off" action="#" th:action="@{/registerlivro}"
+					th:object="${livro}" method="post" class="form-horizontal"
+					role="form">
+					<h2>Cadastro de Livro</h2>
+					<br />
+					<div class="form-group">
+						<div class="col-sm-9">
+						<input type="text" th:field="*{tomboCircular}" placeholder="Tombo Circular"
+								class="form-control" /> 
+						<label th:if="${#fields.hasErrors('tomboCircular')}" th:errors="*{tomboCircular}"
+								class="validation-message"></label>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-9">
+						<input type="text" th:field="*{ISBN}"
+								placeholder="ISBN" class="form-control" /> 
+						<label	th:if="${#fields.hasErrors('ISBN')}" th:errors="*{ISBN}"
+								class="validation-message"></label>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-9">
+							<input type="text" th:field="*{titulo}" placeholder="Título"
+								class="form-control" /> <label
+								th:if="${#fields.hasErrors('titulo')}" th:errors="*{titulo}"
+								class="validation-message"></label>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-9">
+							<input type="text" th:field="*{autor}"
+								placeholder="Autor" class="form-control" /> <label
+								th:if="${#fields.hasErrors('autor')}" th:errors="*{autor}"
+								class="validation-message"></label>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-9">
+							<input type="text" th:field="*{edicao}"
+								placeholder="Edição" class="form-control" /> <label
+								th:if="${#fields.hasErrors('edicao')}" th:errors="*{edicao}"
+								class="validation-message"></label>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-9">
+							<input type="text" th:field="*{ano}"
+								placeholder="Ano" class="form-control" /> <label
+								th:if="${#fields.hasErrors('ano')}" th:errors="*{ano}"
+								class="validation-message"></label>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-9">
+							<input type="text" th:field="*{quantidadePaginas}"
+								placeholder="Quantidade de páginas" class="form-control" /> <label
+								th:if="${#fields.hasErrors('quantidadePaginas')}" th:errors="*{quantidadePaginas}"
+								class="validation-message"></label>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-sm-9">
+							<input type="text" th:field="*{genero}"
+								placeholder="Gênero" class="form-control" /> <label
+								th:if="${#fields.hasErrors('genero')}" th:errors="*{genero}"
+								class="validation-message"></label>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-sm-9">
+							<button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+						</div>
+					</div>
+					
+					<span th:utext="${successMessage}"></span>
+					
+					
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

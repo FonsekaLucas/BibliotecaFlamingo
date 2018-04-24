@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+	<title>Biblioteca Flamingo</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+</head>
+<body th:background="@{/img/background.jpg}">
+   <div id="tudo">
+      <div id="header">
+         <h1>Biblioteca Flamingo</h1>
+      </div>
+      <div id="conteudo">
+         <h3 class="home-h3">SEU LIVRO É SEU MELHOR SABER</h3>
+         <span class="title">Serviços:</span> 
+         <div class="box blue">
+            <ol>
+               <li><a class="link" th:href="@{/emprestimodto}">Empréstimo de Livro</a></li>
+               <li><a class="link" th:href="@{/registerlivro}">Cadastro de Livros</a> </li>
+               <li><a class="link" th:href="@{/registercliente}">Cadastro de Clientes</a> </li>
+            </ol>
+         </div>
+         <p>A nossa biblioteca passa por um rigoroso processo de revisão para assegurar aos profissionais e pesquisadores o 
+            acesso a conteúdos de qualidade, visando garantir um ótimo conhecimento adquirido.
+         </p>
+         <p class="text-right">A biblioteca dispõe de um processo de busca interna .</p>
+         <p class="text-center">Área de conhecimento Reserva &bull;
+      </div>
+      <div class="rodape">
+         <p>Projeto de Sistemas  
+		</p>
+      </div>
+   </div>
+</body>
+</html>
